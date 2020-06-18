@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cuckydev/BlueSpheresDeluxe/src/Backend/Core.h
+../Error.h
+/home/cuckydev/BlueSpheresDeluxe/src/Error.h
+
+/home/cuckydev/BlueSpheresDeluxe/src/Backend/Render.h
+../Error.h
+/home/cuckydev/BlueSpheresDeluxe/src/Error.h
+
+/home/cuckydev/BlueSpheresDeluxe/src/Engine.h
+Error.h
+/home/cuckydev/BlueSpheresDeluxe/src/Error.h
+Backend/Core.h
+/home/cuckydev/BlueSpheresDeluxe/src/Backend/Core.h
+Backend/Render.h
+/home/cuckydev/BlueSpheresDeluxe/src/Backend/Render.h
+
+/home/cuckydev/BlueSpheresDeluxe/src/Error.h
+iostream
+-
+vector
+-
+string
+-
+
+/home/cuckydev/BlueSpheresDeluxe/src/Main.cpp
+Engine.h
+/home/cuckydev/BlueSpheresDeluxe/src/Engine.h
+iostream
+-
+
