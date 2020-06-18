@@ -1,3 +1,0 @@
-/home/cuckydev/BlueSpheresDeluxe/build/CMakeFiles/rebuild_cache.dir
-/home/cuckydev/BlueSpheresDeluxe/build/CMakeFiles/BlueSpheresDeluxe.dir
-/home/cuckydev/BlueSpheresDeluxe/build/CMakeFiles/edit_cache.dir
