@@ -12,7 +12,7 @@ Authors: Regan "cuckydev" Green
 //Error class
 #include "Error.h"
 
-//Backend base classes
+//Backend classes
 #include "Backend/Core.h"
 #include "Backend/Render.h"
 
@@ -32,6 +32,7 @@ namespace BSD
 		struct Config
 		{
 			Config_Backend backend = Config_Backend::Null;
+			BSD::Backend::Render::Config render_config;
 		};
 		
 		//Engine instance class
@@ -45,8 +46,8 @@ namespace BSD
 				Config config;
 				
 				//Backend sub-systems
-				BSD::Backend::Core *core = nullptr;
-				BSD::Backend::Render *render = nullptr;
+				BSD::Backend::Core::Base *core = nullptr;
+				BSD::Backend::Render::Base *render = nullptr;
 				
 			public:
 				//Constructors and destructor

@@ -18,19 +18,23 @@ namespace BSD
 	//Backend namespace
 	namespace Backend
 	{
-		//Core base class
-		class Core
+		//Core namespace
+		namespace Core
 		{
-			protected:
-				//Error
-				BSD::Error error;
-				
-			public:
-				//Virtual destructor
-				virtual ~Core() {}
-				
-				//Get error
-				const BSD::Error& GetError() const { return error; }
-		};
+			//Core base class
+			class Base
+			{
+				protected:
+					//Error
+					BSD::Error error;
+					
+				public:
+					//Virtual destructor
+					virtual ~Base() {}
+					
+					//Get error
+					const BSD::Error& GetError() const { return error; }
+			};
+		}
 	}
 }

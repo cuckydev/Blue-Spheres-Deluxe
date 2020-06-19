@@ -16,6 +16,8 @@ Authors: Regan "cuckydev" Green
 	#include "Backend/SDL2/Render.h"
 #endif
 
+#include <iostream>
+
 //Blue Spheres Deluxe namespace
 namespace BSD
 {
@@ -49,14 +51,29 @@ namespace BSD
 				{
 				#ifdef BSD_COMPILE_SDL2
 					case Config_Backend::SDL2:
-						core = new BSD::Backend::Core_SDL2();
-						render = new BSD::Backend::Render_SDL2();
+						core = new BSD::Backend::Core::SDL2();
+						render = new BSD::Backend::Render::SDL2();
 						break;
 				#endif
 					default:
 						return error.Push("Invalid backend (" + std::to_string((unsigned)_config.backend) + ") selected");
 				}
 			}
+			
+			//Ensure backends were successfully created
+			if (core == nullptr)
+				return error.Push("Failed to create backend core sub-system instance");
+			else if (core->GetError())
+				return error.Push(core->GetError());
+			
+			if (render == nullptr)
+				return error.Push("Failed to create backend render sub-system instance");
+			else if (render->GetError())
+				return error.Push(render->GetError());
+			
+			//Set backend configurations
+			if (render->SetConfig(_config.render_config))
+				return error.Push(render->GetError());
 			
 			//Use given configuration
 			config = _config;
@@ -65,6 +82,7 @@ namespace BSD
 		
 		bool Instance::Start()
 		{
+			BSD::Backend::Render::PixelFormat pixel_format = render->GetPixelFormat();
 			return false;
 		}
 	}

@@ -18,13 +18,17 @@ namespace BSD
 	//Backend namespace
 	namespace Backend
 	{
-		//Core class
-		class Core_SDL2 : public Core
+		//Core namespace
+		namespace Core
 		{
-			public:
-				//Constructor and destructor
-				Core_SDL2();
-				~Core_SDL2();
-		};
+			//Core class
+			class SDL2 : public Base
+			{
+				public:
+					//Constructor and destructor
+					SDL2();
+					~SDL2();
+			};
+		}
 	}
 }

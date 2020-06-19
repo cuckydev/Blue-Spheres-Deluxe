@@ -9,6 +9,10 @@ Purpose: Declare the SDL2 backend render class
 Authors: Regan "cuckydev" Green
 */
 
+//SDL2
+#include "SDL_video.h"
+#include "SDL_render.h"
+
 //Base class declaration
 #include "../Render.h"
 
@@ -18,13 +22,28 @@ namespace BSD
 	//Backend namespace
 	namespace Backend
 	{
-		//Render class
-		class Render_SDL2 : public Render
+		//Render namespace
+		namespace Render
 		{
-			public:
-				//Constructor and destructor
-				Render_SDL2();
-				~Render_SDL2();
-		};
+			//Render class
+			class SDL2 : public Base
+			{
+				private:
+					//SDL window, renderer, and output texture
+					SDL_Window *window = nullptr;
+					SDL_Renderer *renderer = nullptr;
+					SDL_Texture *texture = nullptr;
+					SDL_PixelFormatEnum pixel_format_enum;
+					
+				public:
+					//Constructors and destructor
+					SDL2() {}
+					SDL2(const Config &_config) { SetConfig(_config); }
+					~SDL2();
+					
+					//Render interface
+					bool SetConfig(const Config &_config);
+			};
+		}
 	}
 }

@@ -15,7 +15,16 @@ int main(int argc, char *argv[])
 {
 	//Engine configuration
 	BSD::Engine::Config engine_config = {
+		//Backend to use
 		BSD::Engine::Config_Backend::SDL2,
+		
+		//Render configuration
+		{
+			"Blue Spheres Deluxe", //Title
+			320, 224, 2, //Dimensions and scale
+			60, //Framerate
+			false, //Fullscreen
+		}
 	};
 	
 	//Initialize and run engine

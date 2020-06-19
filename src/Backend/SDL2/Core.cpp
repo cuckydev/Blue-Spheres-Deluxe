@@ -19,18 +19,22 @@ namespace BSD
 	//Backend namespace
 	namespace Backend
 	{
-		//Constructor and destructor
-		Core_SDL2::Core_SDL2()
+		//Core namespace
+		namespace Core
 		{
-			//Initialize SDL2
-			if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS | SDL_INIT_AUDIO) < 0)
-				error.Push(SDL_GetError());
-		}
-		
-		Core_SDL2::~Core_SDL2()
-		{
-			//Quit SDL2
-			SDL_Quit();
+			//Constructor and destructor
+			SDL2::SDL2()
+			{
+				//Initialize SDL2
+				if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS | SDL_INIT_AUDIO) < 0)
+					error.Push(SDL_GetError());
+			}
+			
+			SDL2::~SDL2()
+			{
+				//Quit SDL2
+				SDL_Quit();
+			}
 		}
 	}
 }
